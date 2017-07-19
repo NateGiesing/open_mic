@@ -21,4 +21,13 @@ class UserTest < Minitest::Test
 
     assert_equal "Ali", ali.name
   end
+
+  def test_can_learn_joke
+    sal = User.new("Sal")
+    joke = Joke.new({id: 1, question: "Why did the strawberry cross the road?", answer: "Because his mother was in a jam."})
+    expected = joke
+    actual = sal.learn
+
+    assert_equal expected, actual
+  end
 end
